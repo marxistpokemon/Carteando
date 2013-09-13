@@ -1,6 +1,6 @@
 # Carteando
 
-An accessible brwser-based tool for making playing cards. That's it, in a nutshell.
+An accessible browser-based tool for making playing cards. That's it, in a nutshell.
 
 Game making tools should be as accessible as possible, and this is not limited to digital game makers. Even if you need only pen and paper to start a brand new card game, it can quickly escalate in complexity. If you decide to use a computer to help out with the design and make it look good too, then you need even more repertoire and previous knowledge.
 
