@@ -28,28 +28,25 @@ d3.select(".new_card-btn").on("click", function(d, i){
 	newCard = d3.select(".card-container").selectAll(".card").data(allCards)
 		.enter().append("div").attr("class", "card col-md-3");
 
-	newCard.append("h3").attr("class", "card-title").text(function (d, i) {
+	newCard.append("textarea").attr("class", "card-title").text(function (d, i) {
 		  	return allCards[i].title;
-		});
+		}).attr("maxlength", "30").attr("contentEditable", "true");
 
-	newCard.append("div").attr("class", "card-description").text("Click to add a card description...");
+	newCard.append("textarea").attr("class", "card-description").text("Click to add a card description...")
+		.attr("maxlength", "120").attr("contentEditable", "true");
 
 	newCard.append("p").attr("class", "id-line").text(function (d, i) {
 		  	return "Card no. " + i;
 		});
 
-	$(".card-description").editable({
-	    type: 'textarea',
-	    pk: 1,
-	    url: null,
-	    title: 'Click to add description...'
+	$(".card-description").maxlength({
+	    alwaysShow: false,
+	    threshold: 10
 	});
 
-	$(".card-title").editable({
-	    type: 'text',
-	    pk: 1,
-	    url: null,
-	    title: 'Click to add description...'
+	$(".card-title").maxlength({
+	    alwaysShow: false,
+	    threshold: 10
 	});
 	
 });

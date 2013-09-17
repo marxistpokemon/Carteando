@@ -55,7 +55,7 @@ h1 {
 	bottom: 0.5em;
 }
 
-.card h3 {
+.card-title {
 	text-align:center;
 	font: 24px/1 "Lato", sans-serif; 
 	font-weight:bold;
