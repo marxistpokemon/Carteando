@@ -61,6 +61,7 @@ h1 {
 	font-weight:bold;
 	color:#fff;
 	width:100%;
+	margin: 1em 0 0 0;
 	padding:0.5em;
 	background-color:#333;
 	border-radius: 4px;
@@ -69,6 +70,7 @@ h1 {
 .card .card-description {
 	width:100%;
 	padding:0.5em;
+	margin: 1em 0 1em 0;
 }
 
 
