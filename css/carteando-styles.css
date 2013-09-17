@@ -17,14 +17,18 @@ h1 {
 
 /* New Card Btn */
 
-.new_card-btn {
+.new_card-btn, .edit_card-btn {
 	text-align: center;
 	background-color:#ffd200;
 	border-color:#ffd200;
 	color:black;
 }
 
-.new_card-btn:hover {
+.edit_card-btn {
+	margin: 1em;
+}
+
+.new_card-btn:hover, .edit_card-btn:hover {
 	background-color:#000;
 	border-color:#000;
 	color:white;
