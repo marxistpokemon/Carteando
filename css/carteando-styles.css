@@ -1,0 +1,149 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900);
+
+/* Sticky Footer and Navbar template */
+
+html,
+body {
+  height: 100%;
+  color: #34495e;
+  font: 16px/1.231 "Lato", sans-serif; 
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  display: block;
+}
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+/*============================================= CARTEANDO */
+
+a.navbar-brand {
+	font: 24px/0.8 "Playfair Display", sans-serif; 
+	font-weight:bold;
+	font-style: italic;
+	/*text-transform: lowercase;*/
+	color:black;
+	text-align: left;
+}
+
+/* New Card Btn */
+
+.new_card-btn, .edit_card-btn {
+	text-align: center;
+	background-color:#ffd200;
+	border-color:#ffd200;
+	color:black;
+}
+
+.edit_card-btn {
+	margin: 1em;
+}
+
+.new_card-btn:hover, .edit_card-btn:hover {
+	background-color:#000;
+	border-color:#000;
+	color:white;
+}
+
+/* Save Card Btn */
+.save_card-btn {
+	width: auto;
+	text-align:center;
+	position: absolute;
+	left: 0;
+	right:0;
+	bottom: 0.5em;
+	margin: 1em;
+}
+
+/* Card styles */
+
+.card-container {
+	margin-top: 1em;
+}
+
+.card {
+	height: 350px;
+	background-color: #fff;
+	border: 2px solid black;
+	background-color:#fff;
+	border-radius: 4px;
+	box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+.id-line {
+	width: auto;
+	text-align:center;
+	position: absolute;
+	left: 0;
+	right:0;
+	bottom: 1em;
+}
+
+.card-title {
+	text-align:center;
+	font: 24px/1 "Lato", sans-serif; 
+	font-weight:bold;
+	color:#fff;
+	width:auto;
+	margin: 0.5em;
+	padding:0.5em;
+	background-color:#333;
+	border-radius: 4px;
+}
+
+.card-description {
+	width:auto;
+	margin: 0.5em;
+	padding:0.5em;
+}
+
+/* Flippant.js Adaptations */
+
+.flipped {
+	padding: 0;
+}
+
+.flippant-modal-light {
+	padding:0 15px 15px 15px 15px;
+	width:100%;
+	height: 350px;
+}
+
+/* Bootstrap Grid Adaptations */
+
+.col-md-3 {
+	padding-bottom: 15px;
+}
+

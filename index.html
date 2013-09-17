@@ -1,76 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Carteando by marxistpokemon</title>
+    <title>Carteando</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-markdown.min.css" rel="stylesheet" media="screen">
+    <link href="css/flippant.css" rel="stylesheet" media="screen">
+    <link href="css/carteando-styles.css" rel="stylesheet" media="screen">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Carteando</h1>
-        <p class="header">An accessible browser-based tool for making playing cards.</p>
+<body>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/marxistpokemon/Carteando/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/marxistpokemon/Carteando/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/marxistpokemon/Carteando">View On GitHub</a></li>
-        </ul>
+	<div id="wrap">
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/marxistpokemon">marxistpokemon</a></p>
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+			  <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
+			    <a class="navbar-brand" href="#">Carteando</a>
+			  </div>
+			  <div class="collapse navbar-collapse">
+			    <ul class="nav navbar-nav">
+			      <li class="active"><a href="#" class="new_card-btn">New Card</a></li>
+			    </ul>
+			  </div><!--/.nav-collapse -->
+			</div>
+		</div>
 
+		<div class="container" >
+			
+			<div class="row card-container">
+			</div>	
+		</div>
+	</div>
 
-      </header>
-      <section>
-        <h1>
-<a name="carteando" class="anchor" href="#carteando"><span class="octicon octicon-link"></span></a>Carteando</h1>
-
-<p>An accessible browser-based tool for making playing cards. That's it, in a nutshell.</p>
-
-<p>Game making tools should be as accessible as possible, and this is not limited to digital game makers. Even if you need only pen and paper to start a brand new card game, it can quickly escalate in complexity. If you decide to use a computer to help out with the design and make it look good too, then you need even more repertoire and previous knowledge.</p>
-
-<p>The goal of <em>Carteando</em> is to help game making people to <strong>quickly and easily create functional and nice looking cards for print-and-play prototypes and games</strong>. Write the text on your cards and game rules, upload some images and then just press the print button on your browser. The easier, the better: no installations, no need for internet too (we'll try to keep it as portable as possible).</p>
-
-<h4>
-<a name="general-design-principles" class="anchor" href="#general-design-principles"><span class="octicon octicon-link"></span></a>General design principles</h4>
-
-<ul>
-<li>Less is more;</li>
-<li>Easy to localize;</li>
-<li>Appealing and inviting: it should be (at least a bit) fun to use;</li>
-<li>It should be as accessible as possible: cross-browser, responsive, graceful;</li>
-</ul><h4>
-<a name="technical-basis" class="anchor" href="#technical-basis"><span class="octicon octicon-link"></span></a>Technical basis</h4>
-
-<ul>
-<li>A browser-based application that uses client-side JS and CSS: access an online URL or a local version and BAM! there you have it;</li>
-<li>All text editing needed will be made using <a href="https://github.com/tholman/zenpen">zenpen</a> (or the embedable jQuery version of it) and stored as either Markdown or plain text;</li>
-<li>Drawing the cards will be done via <a href="https://github.com/mbostock/d3">D3JS</a>;</li>
-<li>Printing styles will be made via CSS;</li>
-</ul><h4>
-<a name="the-fuzzy-future-aka-wishlist" class="anchor" href="#the-fuzzy-future-aka-wishlist"><span class="octicon octicon-link"></span></a>The fuzzy future (aka. wishlist)</h4>
-
-<ul>
-<li>Image upload;</li>
-<li>Grid-based design for the cards (probably using <a href="http://gridster.net/">gridster.js</a>);</li>
-<li>CSS-based custom styling (using <a href="https://github.com/brianreavis/selectize.js">selectize.js</a> for adding/managing custom classes);</li>
-<li>Local storage saving;</li>
-<li>Exporters for CSV, XML, and other formats so the cards' data can be further developed in more powerful tools and more easily localized/revised;</li>
-</ul>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
+	<div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
-  </body>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/d3.v3.min.js" charset="utf-8"></script>
+	<!-- <script src="js/jquery-1.10.2.js" charset="utf-8"></script> -->
+	<script src="js/bootstrap-maxlength.min.js" charset="utf-8"></script>
+	<script src="js/flippant.min.js" charset="utf-8"></script>
+	<script src="js/bootstrap-markdown.js" charset="utf-8"></script>
+	<script src="js/carteando.js" charset="utf-8"></script>
+</body>
 </html>
