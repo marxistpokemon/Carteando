@@ -7,10 +7,10 @@ body {
 }
 
 h1 {
-	font: 70px/1 "Playfair Display", sans-serif; 
+	font: 4em/1 "Playfair Display", sans-serif; 
 	font-weight:bold;
 	font-style: italic;
-	text-transform: lowercase;
+	/*text-transform: lowercase;*/
 	color:black;
 	text-align: center;
 }
