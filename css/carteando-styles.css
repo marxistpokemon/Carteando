@@ -24,7 +24,8 @@ body {
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: 80px;
+	margin-top:15px;
+  height: 65px;
   background-color: #000000;
   display: block;
 }
@@ -37,11 +38,10 @@ body {
 	color:#ffffff;
 }
 
-/*
-#wrap > .container {
-  padding: 0px 15px 0;
+.middle {
+  padding: 90px 15px 0;
 }
-*/
+
 
 .container .credit {
   margin: 20px 0;
@@ -61,6 +61,11 @@ code {
 .top-menu{
 	height:80px;
 	padding: 15px;
+	background: white;
+}
+
+.navbar-collapse {
+	background:white;
 }
 
 .top-menu h1{
@@ -69,7 +74,7 @@ code {
 	font-weight:bold;
 	font-style: italic;
 	/*text-transform: lowercase;*/
-	color:black !important;
+	color:#333 !important;
 	text-align: left;
 }
 
@@ -81,7 +86,7 @@ code {
 }
 
 .carteando-btn:hover {
-	background-color:#000;
+	background-color:#333;
 	border-color:#000;
 	color:white;
 }
@@ -89,6 +94,12 @@ code {
 /* Import btn */
 .bootstrap-filestyle label {
 	font-weight: normal !important;
+}
+
+/* NEW CARD BTN */
+
+.new_card-btn {
+	display:block;
 }
 
 /* Edit Card Btn */

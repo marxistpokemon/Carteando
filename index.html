@@ -18,43 +18,53 @@
 <body>
 
 	<div id="wrap">
-		<div class="container">
+		<div class="navbar navbar-default navbar-fixed-top top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="navbar-header col-md-3">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				          </button>
+						<h1>Carteando</h1>
+					</div>
 
-			<div class="row top-menu">
-				<div class="col-xs-6 col-md-3">
-					<h1>Carteando</h1>
-				</div>
+					<div class="navbar-collapse collapse">
 
-				<div class="col-xs-6 col-md-9">
-					<ul class="nav nav-pills">
-						<li>
-							<a class="new_card-btn" href="#">
+						<div class="btn-group col-md-3">
+							<button type="button" class="btn btn-lg carteando-btn new_card-btn">
 							<span class="glyphicon glyphicon-plus-sign"></span> New Card
-							</a>
-						</li>
-						<li>
-							<a class="export-btn" href="#">
+							</button>
+						</div>
+
+						<div class="btn-group col-md-6">
+							<a class="export-btn btn btn-lg" href="#">
 							<span class="glyphicon glyphicon-floppy-save"></span> Export to CSV file
 							</a>
-						</li>
-						
-						<li>
 							<a href="#">
 							<input type="file" id="file" class="filestyle" 
 							data-buttonText="Import from CSV file" 
 							data-input="false" style="display:inline;" 
 							data-classIcon="glyphicon glyphicon-floppy-open"
-							data-classButton="nav">
+							data-classButton="btn btn-lg">
 							</a>
-						</li>
-					</ul>
+						</div>
+					</div>
 				</div>
-			</div><!-- /row -->
-			
+			</div>
 		</div><!-- /container -->
 
-		<div class="container">
-			<div class="row card-container"></div>	
+		<div class="container middle">
+			<div class="row card-container">
+				
+			</div>	
+			<div class="row cards-menu">
+				<div class="col-md-12">
+					
+				</div>
+			</div>
+			
 		</div><!-- /container -->
 
 	</div><!-- /wrap -->
