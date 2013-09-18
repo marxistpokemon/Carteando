@@ -17,14 +17,14 @@ body {
   height: auto !important;
   height: 100%;
   /* Negative indent footer by its height */
-  margin: 0 auto -60px;
+  margin: 0 auto -80px;
   /* Pad bottom by footer height */
-  padding: 0 0 60px;
+  padding: 0 0 80px;
 }
 
 /* Set the fixed height of the footer here */
 #footer {
-  height: 60px;
+  height: 80px;
   background-color: #000000;
   display: block;
 }
@@ -37,9 +37,11 @@ body {
 	color:#ffffff;
 }
 
+/*
 #wrap > .container {
-  padding: 60px 15px 0;
+  padding: 0px 15px 0;
 }
+*/
 
 .container .credit {
   margin: 20px 0;
@@ -56,8 +58,14 @@ code {
 
 /*============================================= CARTEANDO */
 
-a.navbar-brand {
-	font: 24px/0.8 "Playfair Display", sans-serif; 
+.top-menu{
+	height:80px;
+	padding: 15px;
+}
+
+.top-menu h1{
+	margin:0;
+	font: 42px/0.8 "Playfair Display", sans-serif; 
 	font-weight:bold;
 	font-style: italic;
 	/*text-transform: lowercase;*/
@@ -65,23 +73,28 @@ a.navbar-brand {
 	text-align: left;
 }
 
-/* New Card Btn */
-
-.new_card-btn, .edit_card-btn {
+.carteando-btn {
 	text-align: center;
 	background-color:#ffd200;
 	border-color:#ffd200;
 	color:black;
 }
 
-.edit_card-btn {
-	margin: 1em;
-}
-
-.new_card-btn:hover, .edit_card-btn:hover {
+.carteando-btn:hover {
 	background-color:#000;
 	border-color:#000;
 	color:white;
+}
+
+/* Import btn */
+.bootstrap-filestyle label {
+	font-weight: normal !important;
+}
+
+/* Edit Card Btn */
+
+.edit_card-btn {
+	margin: 1em;
 }
 
 /* Save Card Btn */
