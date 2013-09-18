@@ -11,11 +11,13 @@ var defaultCard = {id:0, title:"Default Title", description:"Edit the card descr
 // flippant-related variables
 var front, back_content, back;
 
+// ======================================== CARD CONSTRUCTOR
 function Card(pId, pTitle, pDescription){
 	this.id = pId;
 	this.title = pTitle;
 	this.description = pDescription;
 }
+
 
 function addEditCardBtn(obj){
 	obj.append("a").attr("class", "edit_card-btn btn btn-large btn-primary")
@@ -38,9 +40,7 @@ function addEditCardBtn(obj){
 		//console.log(back_content);
 
 		back = flippant.flip(front, back_content, "card");
-
-
-	
+		
 		d3.select(back).select(".save_card-btn").on("click", function(d, i){
 			console.log("save_card clicked");
 
@@ -88,26 +88,6 @@ d3.select(".new_card-btn").on("click", function(d, i){
 		});
 
 	addEditCardBtn(allNewCards);
-
-	/* MAX-LENGTH STUFF WIP
-		newCard.append("input").attr("class", "card-title").text(function (d, i) {
-			  	return allCards[i].title;
-			}).attr("maxlength", "30").attr("contentEditable", "true");
-
-		newCard.append("textarea").attr("class", "card-description")
-			.attr("placeholder", "Click to add a card description...")
-			.attr("maxlength", "120");
-
-		$(".card-description").maxlength({
-		    alwaysShow: false,
-		    threshold: 10
-		});
-
-		$(".card-title").maxlength({
-		    alwaysShow: false,
-		    threshold: 10
-		});
-	*/
 });
 
 // ================================================ EXPORT TO CSV BTN
@@ -158,135 +138,126 @@ function handleFileSelect(evt) {
 	    };
 	}(files[0]);
 }
-
-/*
-$("#file-mask").click(function(e){
-	e.preventDefault();
-	//console.log("clicked file-mask");
-	$("#file").trigger("click");
-});
-*/
 $("#file").change(handleFileSelect);
 
 
 function makeCardsFromCSV(){
-	console.log("making cards from csv.")
+	console.log("making cards from csv.");
 
+	// clear previous DOM elements
+	var clearAllCards = d3.selectAll(".card").each(function(d,i){
+		this.parentNode.remove();
+	});
+	clearAllCards.remove();
+	
 	//clear previous data
 	allCards = new Array();
-	d3.selectAll(".card").remove();
-
-	//allCards = CSVToArray(csvData.toString(), ",");
-	//console.log(allCards);
-
 	allCards = d3.csv.parse(csvData);
+	for (var i = allCards.length - 1; i >= 0; i--) {
+		allCards[i].id = Number(allCards[i].id);
+	};
+	cardCount = allCards.length;
 	console.log(allCards);
 
+	// render cards using d3js
 	var csvCards = d3.select(".card-container").selectAll(".card")
 		.data(allCards)
 		.enter().append("div").attr("class", "col-lg-3 col-md-4 col-sm-6").append("div").attr("class", "card");
-	
-	csvCards.append("h3").attr("class", "card-title")
-		.text(function(d, i){
-			console.log(d);
+	csvCards.append("h3").attr("class", "card-title").text(function(d, i){
 			return d.title;
 		});
-
-	csvCards.append("p").attr("class", "card-description")
-		.text(function(d, i){
+	csvCards.append("p").attr("class", "card-description").text(function(d, i){
 			return d.description;
 		});
-
 	csvCards.append("p").attr("class", "id-line").text(function (d) {
 		  	return "Card no. " + d.id;
 		});
-
-addEditCardBtn(csvCards);
+	addEditCardBtn(csvCards);
+	
 }
 
+// ======================================== CSV TO ARRAY PARSER FUNCTION
+// This will parse a delimited string into an array of
+// arrays. The default delimiter is the comma, but this
+// can be overriden in the second argument.
+function CSVToArray( strData, strDelimiter ){
+	// Check to see if the delimiter is defined. If not,
+	// then default to comma.
+	strDelimiter = (strDelimiter || ",");
+
+	// Create a regular expression to parse the CSV values.
+	var objPattern = new RegExp(
+		(
+			// Delimiters.
+			"(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+
+			// Quoted fields.
+			"(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+
+			// Standard fields.
+			"([^\"\\" + strDelimiter + "\\r\\n]*))"
+		),
+		"gi"
+		);
 
 
- // This will parse a delimited string into an array of
-    // arrays. The default delimiter is the comma, but this
-    // can be overriden in the second argument.
-    function CSVToArray( strData, strDelimiter ){
-    	// Check to see if the delimiter is defined. If not,
-    	// then default to comma.
-    	strDelimiter = (strDelimiter || ",");
+	// Create an array to hold our data. Give the array
+	// a default empty first row.
+	var arrData = [[]];
 
-    	// Create a regular expression to parse the CSV values.
-    	var objPattern = new RegExp(
-    		(
-    			// Delimiters.
-    			"(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
-
-    			// Quoted fields.
-    			"(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
-
-    			// Standard fields.
-    			"([^\"\\" + strDelimiter + "\\r\\n]*))"
-    		),
-    		"gi"
-    		);
+	// Create an array to hold our individual pattern
+	// matching groups.
+	var arrMatches = null;
 
 
-    	// Create an array to hold our data. Give the array
-    	// a default empty first row.
-    	var arrData = [[]];
+	// Keep looping over the regular expression matches
+	// until we can no longer find a match.
+	while (arrMatches = objPattern.exec( strData )){
 
-    	// Create an array to hold our individual pattern
-    	// matching groups.
-    	var arrMatches = null;
+		// Get the delimiter that was found.
+		var strMatchedDelimiter = arrMatches[ 1 ];
 
+		// Check to see if the given delimiter has a length
+		// (is not the start of string) and if it matches
+		// field delimiter. If id does not, then we know
+		// that this delimiter is a row delimiter.
+		if (
+			strMatchedDelimiter.length &&
+			(strMatchedDelimiter != strDelimiter)
+			){
 
-    	// Keep looping over the regular expression matches
-    	// until we can no longer find a match.
-    	while (arrMatches = objPattern.exec( strData )){
+			// Since we have reached a new row of data,
+			// add an empty row to our data array.
+			arrData.push( [] );
 
-    		// Get the delimiter that was found.
-    		var strMatchedDelimiter = arrMatches[ 1 ];
-
-    		// Check to see if the given delimiter has a length
-    		// (is not the start of string) and if it matches
-    		// field delimiter. If id does not, then we know
-    		// that this delimiter is a row delimiter.
-    		if (
-    			strMatchedDelimiter.length &&
-    			(strMatchedDelimiter != strDelimiter)
-    			){
-
-    			// Since we have reached a new row of data,
-    			// add an empty row to our data array.
-    			arrData.push( [] );
-
-    		}
+		}
 
 
-    		// Now that we have our delimiter out of the way,
-    		// let's check to see which kind of value we
-    		// captured (quoted or unquoted).
-    		if (arrMatches[ 2 ]){
+		// Now that we have our delimiter out of the way,
+		// let's check to see which kind of value we
+		// captured (quoted or unquoted).
+		if (arrMatches[ 2 ]){
 
-    			// We found a quoted value. When we capture
-    			// this value, unescape any double quotes.
-    			var strMatchedValue = arrMatches[ 2 ].replace(
-    				new RegExp( "\"\"", "g" ),
-    				"\""
-    				);
+			// We found a quoted value. When we capture
+			// this value, unescape any double quotes.
+			var strMatchedValue = arrMatches[ 2 ].replace(
+				new RegExp( "\"\"", "g" ),
+				"\""
+				);
 
-    		} else {
+		} else {
 
-    			// We found a non-quoted value.
-    			var strMatchedValue = arrMatches[ 3 ];
+			// We found a non-quoted value.
+			var strMatchedValue = arrMatches[ 3 ];
 
-    		}
+		}
 
 
-    		// Now that we have our value string, let's add
-    		// it to the data array.
-    		arrData[ arrData.length - 1 ].push( strMatchedValue );
-    	}
+		// Now that we have our value string, let's add
+		// it to the data array.
+		arrData[ arrData.length - 1 ].push( strMatchedValue );
+	}
 
-    	// Return the parsed data.
-    	return( arrData );
-    }
+	// Return the parsed data.
+	return( arrData );
+}
