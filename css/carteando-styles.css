@@ -30,6 +30,10 @@ body {
   display: block;
 }
 
+#footer a {
+	color:#ffd200;
+}
+
 #footer p {
 	color: #aaa;
 }
@@ -63,6 +67,12 @@ code {
 	padding: 15px;
 	background: white;
 }
+
+/*
+.top-menu a {
+	color: #ffd200;
+}
+*/
 
 .navbar-collapse {
 	background:white;
