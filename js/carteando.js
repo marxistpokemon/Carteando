@@ -158,6 +158,7 @@ function handleFileSelect(evt) {
 	    };
 	}(files[0]);
 }
+$("#files").bootstrapFileInput();
 $("#files").change(handleFileSelect);
 
 function makeCardsFromCSV(){

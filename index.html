@@ -18,43 +18,35 @@
 <body>
 
 	<div id="wrap">
+		<div class="row">
 
-		<!-- Fixed navbar -->
-		<div class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-			  <div class="navbar-header">
-			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			      <span class="icon-bar"></span>
-			    </button>
-			    <a class="navbar-brand" href="#">Carteando</a>
-			  </div>
-			  <div class="collapse navbar-collapse">
-			    <ul class="nav navbar-nav">
-			      <li class="active"><a href="#" class="new_card-btn">New Card</a></li>
-			      <li><a href="#" class="export-btn">Export CSV file</a></li>
-			      <li><a href="#" class="import-btn"></a></li>
-			      <li><input type="file" id="files" name="files[]" class="btn link" title="Import from CSV file" /></li>
-			      
-			    </ul>
-			  </div><!--/.nav-collapse -->
+			<div class="col-xs-6 col-md-4">
+				<h1>Carteando<small>Card-making tool.</small></h1>
 			</div>
-		</div>
 
-		<div class="container" >
-			
-			<div class="row card-container">
-			</div>	
-		</div>
-	</div>
+			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+			<div class="col-xs-6 col-md-4">
+				<div class="btn-group">
+					<button type="button" class="btn new_card-btn">New Card</button>
+					<button type="button" class="btn export-btn">Export CSV file</button>
+
+					<a class="file-input-wrapper btn">"Import from CSV file"<input type="file" id="files" title="Import from CSV file"></a>
+				</div> 
+			</div>
+		</div><!-- /row -->
+
+		<div class="container">
+			<div class="row card-container"></div>	
+		</div><!-- /container -->
+
+	</div><!-- /wrap -->
 
 	<div id="footer">
       <div class="container">
         <p class="text-muted credit">An accessible browser-based tool for making playing cards.
         <a href="https://github.com/marxistpokemon/Carteando">Check the project on Github.</a></p>
       </div>
-    </div>
+    </div><!-- /footer -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="//code.jquery.com/jquery.js"></script>
@@ -65,6 +57,7 @@
 	<script src="js/bootstrap-maxlength.min.js" charset="utf-8"></script>
 	<script src="js/flippant.min.js" charset="utf-8"></script>
 	<script src="js/bootstrap-markdown.js" charset="utf-8"></script>
+	<script src="js/bootstrap.file-input.js" charset="utf-8"></script>
 	<script src="js/FileSaver.js" charset="utf-8"></script>
 	<script src="js/carteando.js" charset="utf-8"></script>
 </body>
