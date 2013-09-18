@@ -40,7 +40,7 @@ function addEditCardBtn(obj){
 		//console.log(back_content);
 
 		back = flippant.flip(front, back_content, "card");
-		
+
 		d3.select(back).select(".save_card-btn").on("click", function(d, i){
 			console.log("save_card clicked");
 
@@ -76,7 +76,7 @@ d3.select(".new_card-btn").on("click", function(d, i){
 	allCards.push(newCard);
 
 	var allNewCards = d3.select(".card-container").selectAll(".card").data(allCards)
-		.enter().append("div").attr("class", "col-lg-3 col-md-4 col-sm-6").append("div").attr("class", "card");
+		.enter().append("div").attr("class", "col-lg-3 col-md-4 col-sm-6 card-slot").append("div").attr("class", "card");
 
 	allNewCards.append("h3").attr("class", "card-title")
 		.text(defaultCard.title);
@@ -162,7 +162,7 @@ function makeCardsFromCSV(){
 	// render cards using d3js
 	var csvCards = d3.select(".card-container").selectAll(".card")
 		.data(allCards)
-		.enter().append("div").attr("class", "col-lg-3 col-md-4 col-sm-6").append("div").attr("class", "card");
+		.enter().append("div").attr("class", "col-lg-3 col-md-4 col-sm-6 card-slot").append("div").attr("class", "card");
 	csvCards.append("h3").attr("class", "card-title").text(function(d, i){
 			return d.title;
 		});

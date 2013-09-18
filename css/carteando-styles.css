@@ -114,6 +114,11 @@ code {
 	margin-top: 1em;
 }
 
+.card-slot {
+	margin:15px 0 0;
+	height: 350px;
+}
+
 .card {
 	height: 350px;
 	background-color: #fff;
