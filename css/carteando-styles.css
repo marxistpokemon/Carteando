@@ -19,7 +19,7 @@ body {
   /* Negative indent footer by its height */
   margin: 0 auto -80px;
   /* Pad bottom by footer height */
-  padding: 0 0 80px;
+  padding: 80px 0 80px;
 }
 
 /* Set the fixed height of the footer here */
@@ -42,9 +42,11 @@ body {
 	color:#ffffff;
 }
 
+/*
 .middle {
   padding: 90px 15px 0;
 }
+*/
 
 
 .container .credit {
@@ -79,7 +81,7 @@ code {
 }
 
 .top-menu h1{
-	margin:0;
+	margin:0.25em 0 0.25em 0;
 	font: 42px/0.8 "Playfair Display", sans-serif; 
 	font-weight:bold;
 	font-style: italic;
@@ -187,10 +189,3 @@ code {
 	width:100%;
 	height: 350px;
 }
-
-/* Bootstrap Grid Adaptations */
-
-.col-md-3 {
-	padding-bottom: 15px;
-}
-
