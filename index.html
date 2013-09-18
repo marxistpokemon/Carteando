@@ -18,22 +18,40 @@
 <body>
 
 	<div id="wrap">
-		<div class="row">
+		<div class="container">
 
-			<div class="col-xs-6 col-md-4">
-				<h1>Carteando<small>Card-making tool.</small></h1>
-			</div>
+			<div class="row top-menu">
+				<div class="col-xs-6 col-md-3">
+					<h1>Carteando</h1>
+				</div>
 
-			<div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-			<div class="col-xs-6 col-md-4">
-				<div class="btn-group">
-					<button type="button" class="btn new_card-btn">New Card</button>
-					<button type="button" class="btn export-btn">Export CSV file</button>
-
-					<a class="file-input-wrapper btn">"Import from CSV file"<input type="file" id="files" title="Import from CSV file"></a>
-				</div> 
-			</div>
-		</div><!-- /row -->
+				<div class="col-xs-6 col-md-9">
+					<ul class="nav nav-pills">
+						<li>
+							<a class="new_card-btn" href="#">
+							<span class="glyphicon glyphicon-plus-sign"></span> New Card
+							</a>
+						</li>
+						<li>
+							<a class="export-btn" href="#">
+							<span class="glyphicon glyphicon-floppy-save"></span> Export to CSV file
+							</a>
+						</li>
+						
+						<li>
+							<a href="#">
+							<input type="file" id="file" class="filestyle" 
+							data-buttonText="Import from CSV file" 
+							data-input="false" style="display:inline;" 
+							data-classIcon="glyphicon glyphicon-floppy-open"
+							data-classButton="nav">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div><!-- /row -->
+			
+		</div><!-- /container -->
 
 		<div class="container">
 			<div class="row card-container"></div>	
@@ -54,10 +72,10 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/d3.v3.min.js" charset="utf-8"></script>
 	<!-- <script src="js/jquery-1.10.2.js" charset="utf-8"></script> -->
-	<script src="js/bootstrap-maxlength.min.js" charset="utf-8"></script>
+	<!-- <script src="js/bootstrap-maxlength.min.js" charset="utf-8"></script> -->
 	<script src="js/flippant.min.js" charset="utf-8"></script>
-	<script src="js/bootstrap-markdown.js" charset="utf-8"></script>
-	<script src="js/bootstrap.file-input.js" charset="utf-8"></script>
+	<!-- <script src="js/bootstrap-markdown.js" charset="utf-8"></script> -->
+	<script src="js/bootstrap-filestyle.js" charset="utf-8"></script>
 	<script src="js/FileSaver.js" charset="utf-8"></script>
 	<script src="js/carteando.js" charset="utf-8"></script>
 </body>
