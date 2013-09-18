@@ -158,7 +158,16 @@ function handleFileSelect(evt) {
 	    };
 	}(files[0]);
 }
-$("#files").change(handleFileSelect);
+
+/*
+$("#file-mask").click(function(e){
+	e.preventDefault();
+	//console.log("clicked file-mask");
+	$("#file").trigger("click");
+});
+*/
+$("#file").change(handleFileSelect);
+
 
 function makeCardsFromCSV(){
 	console.log("making cards from csv.")
